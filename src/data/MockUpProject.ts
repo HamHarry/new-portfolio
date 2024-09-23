@@ -8,7 +8,8 @@ export const mockUpProject = [
       "/assets/image/Projects/FoodShop/foodshop3.png",
       "/assets/image/Projects/FoodShop/foodshop4.png",
     ],
-    features: "",
+    features:
+      "Created a website for selling food using HTML CSS Javascript and ReactJS framework.",
     language: "HTML, CSS, JavaScript",
     tools: "VSCode, Git",
     link: "https://foodshop-three.vercel.app/",
@@ -26,7 +27,8 @@ export const mockUpProject = [
       "/assets/image/Projects/GameShop/gameshop6.png",
       "/assets/image/Projects/GameShop/gameshop7.png",
     ],
-    features: "",
+    features:
+      "I created a website for selling online games using HTML, CSS, and TypeScript, utilizing the ReactJS framework, with a login system that communicates with an API for data retrieval, updates, and transmission, while implementing a token-based authentication mechanism that stores tokens in both cookies and local storage for security and user session management.",
     language: "HTML, CSS, TypeScript",
     tools: "VSCode, Git , Postman",
     link: "https://gameshop-iota.vercel.app/login",

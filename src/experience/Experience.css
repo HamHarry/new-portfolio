@@ -99,9 +99,11 @@
 .content-text p {
   color: white;
   font-family: "Archivo Black", sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   margin-bottom: 5px;
+  width: 600px;
 }
 .text-yellow {
+  font-size: 18px;
   color: #e8c857;
 }
