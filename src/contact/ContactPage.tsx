@@ -1,27 +1,34 @@
 import "./Contact.css";
+import { Controller, useForm } from "react-hook-form";
+import axios from "axios";
+
+interface Form {
+  email: string;
+  message: string;
+}
+
+const defaultValues = {
+  email: "",
+  message: "",
+};
 
 const ContactPage = () => {
-  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const form = e.target as HTMLFormElement;
-    const formData = new FormData(form);
+  const { handleSubmit, control, reset } = useForm<Form>({ defaultValues });
 
-    formData.append("access_key", "eadfea7c-a6e6-4b5f-90ac-cd4d2e96429e");
-
-    const object = Object.fromEntries(formData);
-    const json = JSON.stringify(object);
-
-    const res = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
+  const submit = async (value: Form) => {
+    const body = {
+      ...value,
+      access_key: "eadfea7c-a6e6-4b5f-90ac-cd4d2e96429e",
+    };
+    const res = await axios.post("https://api.web3forms.com/submit", body, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-      body: json,
-    }).then((res) => res.json());
+    });
 
-    if (res.success) {
-      console.log("Success", res);
+    if ([200, 201].includes(res.status)) {
+      reset();
     }
   };
 
@@ -31,23 +38,40 @@ const ContactPage = () => {
         <h1>Contact</h1>
         <div className="line"></div>
         <div className="container-contact-input">
-          <form onSubmit={onSubmit}>
-            <div className="email">
-              <h2>Email:</h2>
-              <input
-                type="email"
-                placeholder="Email..."
-                name="email"
-                required
-              />
-            </div>
-            <div className="contact">
-              <textarea
-                placeholder="Enter text here..."
-                name="message"
-                required
-              />
-            </div>
+          <form onSubmit={handleSubmit(submit)}>
+            <Controller
+              control={control}
+              name="email"
+              render={({ field }) => {
+                return (
+                  <div className="email">
+                    <h2>Email:</h2>
+                    <input
+                      {...field}
+                      type="email"
+                      placeholder="Email..."
+                      name="email"
+                      required
+                    />
+                  </div>
+                );
+              }}
+            />
+            <Controller
+              control={control}
+              name="message"
+              render={({ field }) => {
+                return (
+                  <div className="contact">
+                    <textarea
+                      {...field}
+                      placeholder="Enter text here..."
+                      required
+                    />
+                  </div>
+                );
+              }}
+            />
             <button type="submit">Send</button>
           </form>
         </div>
