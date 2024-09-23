@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import "./Education.css";
 
-const PDF_FILE_URL_SV = "http://localhost:5173/TranscriptSongvit.pdf";
-const PDF_FILE_URL_ST = "http://localhost:5173/TranscriptSamtech.pdf";
-const PDF_FILE_URL_BU = "http://localhost:5173/Transcript.pdf";
+const PDF_FILE_URL_SV = `${import.meta.env.BASE_URL}/TranscriptSongvit.pdf`;
+const PDF_FILE_URL_ST = `${import.meta.env.BASE_URL}/TranscriptSamtech.pdf`;
+const PDF_FILE_URL_BU = `${import.meta.env.BASE_URL}/Transcript.pdf`;
 
 const EducationPage = () => {
   const downloadFileAtURL = (url: any) => {
