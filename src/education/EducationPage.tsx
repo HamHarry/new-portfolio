@@ -1,9 +1,15 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import "./Education.css";
 
-const PDF_FILE_URL_SV = `${import.meta.env.BASE_URL}/TranscriptSongvit.pdf`;
-const PDF_FILE_URL_ST = `${import.meta.env.BASE_URL}/TranscriptSamtech.pdf`;
-const PDF_FILE_URL_BU = `${import.meta.env.BASE_URL}/Transcript.pdf`;
+const PDF_FILE_URL_SV = `${
+  import.meta.env.VITE_BASE_URL
+}/TranscriptSongvit.pdf`;
+const PDF_FILE_URL_ST = `${
+  import.meta.env.VITE_BASE_URL
+}/TranscriptSamtech.pdf`;
+const PDF_FILE_URL_BU = `${import.meta.env.VITE_BASE_URL}/Transcript.pdf`;
+
+console.log("url : ", import.meta.env.VITE_BASE_URL);
 
 const EducationPage = () => {
   const downloadFileAtURL = (url: any) => {
