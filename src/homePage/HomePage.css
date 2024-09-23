@@ -1,0 +1,65 @@
+.container-homepage {
+  position: relative;
+  top: 60px;
+}
+.wrap-container-homepage {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 130%);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.wrap-container-homepage h1 {
+  text-align: center;
+  color: white;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 48px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.text-color {
+  color: #e8c857;
+}
+.btn-about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  width: 150px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: #e8c857;
+  cursor: pointer;
+  transition: all 0.5s;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 20px;
+}
+.btn-about:hover {
+  box-shadow: 0 0 0.5em 0.25em #e8c857, 0 0 2em 1em #e8c857,
+    inset 0 0 0.75em 0.25em #e8c857;
+  transition: all 0.5s;
+}
+.wrap-container-homepage > .line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  border: 5px solid #e8c857;
+  width: 250px;
+  animation: spin 3s linear infinite;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+@keyframes spin {
+  from {
+    left: 48%;
+  }
+  to {
+    left: 68%;
+  }
+}

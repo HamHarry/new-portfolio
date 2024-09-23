@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/about/aboutpage.tsx","./src/contact/contactpage.tsx","./src/data/mockupproject.ts","./src/data/mockupskills.ts","./src/education/educationpage.tsx","./src/experience/experiencepage.tsx","./src/homepage/homepage.tsx","./src/layout/navbar.tsx","./src/skill/skillpage.tsx"],"errors":true,"version":"5.6.2"}
