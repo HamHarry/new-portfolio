@@ -1,7 +1,19 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import "./About.css";
 import { Link } from "react-scroll";
 
+const PDF_FILE_URL_CV = `${import.meta.env.VITE_BASE_URL}/cv.pdf`;
+
 const AboutPage = () => {
+  const downloadFileAtURL = (url: any) => {
+    const fileName = url.split("/").pop();
+    const aTag = document.createElement("a");
+    aTag.href = url;
+    aTag.setAttribute("download", fileName);
+    document.body.appendChild(aTag);
+    aTag.click();
+    aTag.remove();
+  };
   return (
     <div className="container-about">
       <div className="wrap-container-about">
@@ -41,7 +53,13 @@ const AboutPage = () => {
             >
               Contact Me
             </Link>
-            <button>Download CV</button>
+            <button
+              onClick={() => {
+                downloadFileAtURL(PDF_FILE_URL_CV);
+              }}
+            >
+              Download CV
+            </button>
           </div>
         </div>
       </div>

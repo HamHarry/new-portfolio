@@ -1,4 +1,5 @@
 import "./HomePage.css";
+
 import { Link } from "react-scroll";
 const HomePage = () => {
   return (
