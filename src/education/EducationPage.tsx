@@ -9,8 +9,6 @@ const PDF_FILE_URL_ST = `${
 }/TranscriptSamtech.pdf`;
 const PDF_FILE_URL_BU = `${import.meta.env.VITE_BASE_URL}/Transcript.pdf`;
 
-console.log("url : ", import.meta.env.VITE_BASE_URL);
-
 const EducationPage = () => {
   const downloadFileAtURL = (url: any) => {
     const fileName = url.split("/").pop();
